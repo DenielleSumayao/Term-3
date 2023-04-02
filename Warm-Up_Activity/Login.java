@@ -1,11 +1,14 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
-import javax.swing.border.Border;
+import javax.swing.plaf.FontUIResource;
 
 public class Login extends JFrame {
-    final private Font mainFont - new Font(name:"Cambria", Font.BOLD, size:18);
+    final private Font mainFont = new FontUIResource("Cambria", Font.BOLD, 18);
 
-    JLabel 1bUserName, 1bPassword;
+    JLabel lbUserName, lbPassword;
 
     JTextField tfUserName;
 
@@ -13,65 +16,82 @@ public class Login extends JFrame {
 
     JButton btnLogin, btnClear;
 
-    public void LoadForm() {
+    public void LoadForm(){
 
-        lbUserName = new JLabel(text: "User Name:");
+        lbUserName = new JLabel("User Name");
         lbUserName.setFont(mainFont);
 
-        lbPassword = new JLabel(text: "Password");
+        lbPassword = new JLabel("Password");
         lbPassword.setFont(mainFont);
 
         tfUserName = new JTextField();
-        tfUSerName.setFont(mainFont);
+        tfUserName.setFont(mainFont);
 
-        btnLogin = new JButton(text: "Login");
+        jpPassword = new JPasswordField();
+        jpPassword.setFont(mainFont);
+
+        btnLogin = new JButton("Login");
         btnLogin.setFont(mainFont);
-        btnLogin.addActionListeber(mew ActionListener(){
+        btnLogin.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO Auto-Generated Method Stub
+                // TODO Auto-generated method stub
                 String userName = tfUserName.getText();
-                String password = new String(jPassword.getPasssword());
-
-                //Check User Login
-                if (userName.equals(anObject:"Admin") && password.equals(anObject:"1234")) {
-                    JOptionPane.showMessageDialog(rootPane, message:"Login Successful!");
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, message: "Login Failed!");
+                String password = new String(jpPassword.getPassword());
+    
+                //To check user log in
+                if(userName.equals("Denielle Sumayao") && password.equals("Skywalker15")){
+                    JOptionPane.showMessageDialog(rootPane, "Log In Successful!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(rootPane, "Log In Failed. User Name/Password Invalid.");
                 }
             }
+            
+        });
+
+        btnClear = new JButton("Clear");
+        btnClear.setFont(mainFont);
+        btnClear.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                tfUserName.setText("");
+                jpPassword.setText("");
+            } 
+            
         });
 
         JPanel formPanel = new JPanel();
-        formPanel.setLayout(new GridLayout(rows:4, cols:1, hgap:5, vgap:5));
+        formPanel.setLayout(new GridLayout(4, 1, 5, 5));
         formPanel.add(lbUserName);
         formPanel.add(tfUserName);
         formPanel.add(lbPassword);
         formPanel.add(jpPassword);
 
-        JPanel buttonPanel - new JPanel();
-        buttonPanel.setLayout(new GridLayout(rows:1, cols:2, hgap:5, vgap:5));
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(1, 2, 5, 5));
         buttonPanel.add(btnLogin);
         buttonPanel.add(btnClear);
 
-        JPanel mainPanel = newJPanel();
+        JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(top:15, left:15, botom:15, right:15));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
         mainPanel.add(formPanel, BorderLayout.NORTH);
-        mainPanel.add(buttonPannel, BorderLayout.SOUTH);
+        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
 
         this.add(mainPanel);
 
-        setTitle(title:"Login Form");
-        setSize(width:500, height:30);
+        setTitle("Login Form");
+        setSize(500, 300);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new Dimension(width:200, height:100));
-        setVisible(b: true);
+        setMinimumSize(new Dimension(200, 100));
+        setVisible(true);
     }
 
     public static void main(String[] args) throws Exception {
-        // System.out.prinln("Hello, World");
         Login main = new Login();
         main.LoadForm();
     }
