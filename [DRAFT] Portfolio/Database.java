@@ -1,6 +1,9 @@
 package SumayaoPortfolio;
 
 public class Database {
-	BiographyData bio = new BiographyData();
-	
+	public static void main(String args[]) {
+	    BiographyData bio = new BiographyData();
+	    
+	    System.out.println(bio.Name);
+}
 }
