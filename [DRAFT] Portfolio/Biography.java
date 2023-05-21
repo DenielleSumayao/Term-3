@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 
 public class Biography extends Database{
 	JFrame BiographyFrame;
+	
+    BiographyData bio = new BiographyData();
 
 	//Application Launch
 		public static void main(String[] args) {
