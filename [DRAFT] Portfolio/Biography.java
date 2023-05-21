@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 public class Biography extends Database{
 	JFrame BiographyFrame;
 	
+	//Inheritance
     BiographyData bio = new BiographyData();
 
 	//Application Launch
