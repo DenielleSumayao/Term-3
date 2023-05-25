@@ -1,0 +1,21 @@
+package InheritanceOverriding;
+
+public class U2SpyPlane extends Vehicle{
+
+	 String name = "U-2 Spy Plane";
+	 String speed = "805";
+	 String color = "White";
+	 String price = "48,000,000.00";
+	 String wingspan = "31";
+	 
+	 @Override
+	 public void stop() {
+		 //super.stop();//
+		 System.out.println("U-2 Spy Plane has stopped.");
+	 }
+	 
+	 public void fly() {
+		 System.out.println("U-2 Spy Plane is flying.");
+	 }
+}
+
