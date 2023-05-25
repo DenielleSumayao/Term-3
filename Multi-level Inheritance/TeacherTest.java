@@ -1,5 +1,5 @@
 
-public class teacherTest {
+public class TeacherTest {
 	public static void main(String args[]) {
         
 		ProgrammingTeacher obj = new ProgrammingTeacher();
